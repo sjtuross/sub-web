@@ -10,7 +10,17 @@ WORKDIR /app
 COPY . /app
 RUN yarn build
 
-FROM nginx:1.16-alpine
-COPY --from=build /app/dist /usr/share/nginx/html
-EXPOSE 80
-CMD [ "nginx", "-g", "daemon off;" ]
+FROM tindy2013/subconverter:latest
+
+RUN apk add tzdata && \
+    cp /usr/share/zoneinfo/Asia/Shanghai /etc/localtime && \
+    echo "Asia/Shanghai" > /etc/timezone && \
+    apk del tzdata
+
+RUN mkdir /base/web /overlay
+
+COPY --from=build /app/dist /base/web
+
+EXPOSE 25500
+
+CMD cp -a /overlay/. /base && subconverter
