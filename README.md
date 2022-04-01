@@ -1,17 +1,27 @@
+# sub-web & subconverter
+
+- 集成sub-web和subconverter至一个docker
+- 挂载overlay目录，启动时替换内置base目录中的配置文件
+- 更新内置ACL4SSR至最新版
+
 # sub-web
 
 基于 vue-cli 与 [tindy2013/subconverter](https://github.com/tindy2013/subconverter) 后端实现的配置自动生成。
 
 ## Table of Contents
 
-- [ChangeLog](#ChangeLog)
-- [Docker](#Docker)
-- [Requirements](#Requirements)
-- [Install](#install)
-- [Usage](#usage)
-- [Related](#Related)
-- [Contributing](#contributing)
-- [License](#license)
+- [sub-web & subconverter](#sub-web--subconverter)
+- [sub-web](#sub-web)
+  - [Table of Contents](#table-of-contents)
+  - [ChangeLog](#changelog)
+  - [Docker](#docker)
+  - [Requirements](#requirements)
+  - [Install](#install)
+  - [Usage](#usage)
+  - [Deploy](#deploy)
+  - [Related](#related)
+  - [Contributing](#contributing)
+  - [License](#license)
 
 ## ChangeLog
 
